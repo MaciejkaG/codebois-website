@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codebois - Creative Development Team</title>
+    <style>
+      @font-face {
+  font-family: 'GreycliffCF';
+  src: url('font/greycliff/GreycliffCF-Medium.ttf') format('truetype');
+}
+
+#slogan {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(to top, #d33878, #469ddc);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: fadein 1s ease-in-out;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'GreycliffCF', sans-serif;
+  text-align: center;
+  overflow-y: scroll;
+}
+#logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  height: auto;
+}
+.main-content {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 80%;
+  background: black;
+  border-radius: 10px;
+  padding: 40px;
+}
+#about {
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+#services {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+a {
+  color: #61dafb;
+  font-weight: 600;
+}
+.team {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 150px;
+  flex-wrap: wrap;
+}
+.team .member {
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px;
+  background: black;
+  border-radius: 10px;
+  animation: fadeIn 2s ease;
+  transition: all 0.3s ease;
+}
+.member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.member p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.member .pref-lang {
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.member .bio {
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.member:hover {
+	transform: scale(1.2); 
+	box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.2);
+	background-color: rgba(0, 0, 0, 0.2);
+}
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0; /* aligns the footer to the bottom of the viewport */
+  width: 100%; /* spans the full width of the viewport */
+  margin-bottom: 50px;
+}
+
+/* custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+  background: transparent
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(to top, #d33878, #469ddc);
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slidein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+    </style>
+  </head>
+  <body>
+    <img id="logo" src="logo.png" alt="Logo">
+    <p id="slogan">Creating unique and innovative solutions</p>
+    <div class="main-content">
+        <p id="about">At Codebois, we strive to deliver the highest quality products and services to our clients. Our team of young and creative developers is dedicated to pushing the boundaries of what is possible and creating unique and innovative solutions for your business. <a href="https://www.instagram.com/jerzyzientkowskiofficial/">Contact us</a> to learn more about how we can help you achieve your goals.</p>
+        <p id="services">Our services include web development, mobile development, UI/UX design, and more.</p>
+        <div class="team">
+        <div class="member">
+            <img src="employee1.png" alt="Employee 1">
+            <p>Vandef<br>Programmer</p>
+            <p class="pref-lang">Preferred Languages: C#, C++</p>
+            <p class="bio">Vandef is an experienced programmer with a passion for creating beautiful and functional websites.</p>
+        </div>
+        <div class="member">
+            <img src="employee2.gif" alt="Employee 2">
+            <p>Gustaw<br>Programmer</p>
+            <p class="pref-lang">Preferred Languages: Python, Java</p>
+            <p class="bio">Gustaw is a talented programmer with a knack for finding creative solutions to complex problems.</p>
+        </div>
+        <div class="member" style="margin-right: 40px;">
+            <img src="employee3.png" alt="Employee 3">
+            <p>Pingwinek<br>Programmer</p>
+            <p class="pref-lang">Preferred Languages: PHP, Python, JavaScript</p>
+            <p class="bio">Pingwinek is a passionate programmer with a deep understanding of web development technologies.</p>
+        </div>
+        <div class="member">
+            <img src="employee4.png" alt="Employee 4">
+            <p>Włodzimierz<br>Programmer</p>
+            <p class="pref-lang">Preferred Languages: Python</p>
+            <p class="bio">Włodzimierz is an experienced programmer with a passion for developing innovative applications.</p>
+        </div>
+        <div class="member">
+            <img src="employee5.png" alt="Employee 5">
+            <p>Jerzy Zientkowski<br>CEO</p>
+            <p class="pref-lang">Preferred Languages: PHP</p>
+            <p class="bio">Jerzy is the founder and CEO of Codebois. He is an experienced leader with a passion for helping clients succeed.</p>
+        </div>
+        </div>
+        <footer>
+          <p style="margin-left: -69px;">Copyright ©2023 Codebois</p>
+      </footer>
+    </div>
+  </body>
+</html>
