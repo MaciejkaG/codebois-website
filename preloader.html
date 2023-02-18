@@ -7,16 +7,16 @@
     <style>
         body {
             background: black;
+            overflow: hidden;
         }
         .loader-container {
             z-index: 2;
-            align-items: center;
             display: flex;
             justify-content: center;
+            align-items: center;
             background: black;
-            width: 100vw;
+            width: 92vw;
             height: 100vh;
-            position: fixed;
             top: 0;
             right: 0;
             bottom: 0;
@@ -26,12 +26,26 @@
         }
 
         .loader-container video {
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: auto;
-            margin-bottom: auto;
-            width: 98vh;
+            margin: 0 auto;
+            width: 92vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
+
+        @media all and (max-width: 600px)
+        {
+            .loader-container video {
+            margin: 0 auto;
+            width: 60vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        } 
+        }
+
     </style>
 </head>
 <body>
@@ -63,3 +77,12 @@
     </script>
 </body>
 </html>
+
+<script>
+    setTimeout(function(){
+        finishLoader();
+    }, 1450);
+    setTimeout(function(){
+        window.location.href = 'index.html';
+    }, 5000);
+</script>
