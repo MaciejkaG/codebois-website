@@ -20,6 +20,7 @@
   background: linear-gradient(to top, #d33878, #469ddc);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   animation: fadein 1s ease-in-out;
 }
 
@@ -111,8 +112,7 @@ a {
 }
 footer {
   text-align: center;
-  position: absolute;
-  bottom: 0; /* aligns the footer to the bottom of the viewport */
+  margin-top: auto; /* aligns the footer to the bottom of the viewport */
   width: 100%; /* spans the full width of the viewport */
   margin-bottom: 50px;
 }
@@ -134,9 +134,81 @@ footer {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+.loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            width: 92vw;
+            height: 100vh;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            color: white;
+            font-family: monospace;
+            position: fixed;
+            z-index: 10;
+        }
+
+        .loader-container video {
+            margin: 0 auto;
+            width: 92vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media all and (max-width: 600px)
+        {
+            .loader-container video {
+            margin: 0 auto;
+            width: 60vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        } 
+        }
     </style>
   </head>
   <body>
+    <div class="loader-container" id="loader">
+      <video autoplay muted playsinline style="pointer-events: none;" src="cb-logo-anim-spinner.mp4"
+        id="loaderVideo"></video>
+    </div>
+    <script>
+      const videoElem = document.querySelector('video');
+      var loaded = false;
+
+      videoElem.addEventListener('ended', (event) => {
+        if (loaded) {
+          if (videoElem.src.includes("cb-logo-anim-end.mp4")) {
+            document.getElementById("loader").style.transition = "all 0.5s";
+            setTimeout(() => {
+              document.getElementById("loader").style.opacity = 0;
+              document.getElementById("loader").style.visibility = "hidden";
+            }, 500);
+          } else {
+            videoElem.src = "cb-logo-anim-end.mp4"
+          }
+        } else {
+          videoElem.play();
+        }
+      });
+      // document.onreadystatechange = function () {
+      //   if (document.readyState === "complete") {
+      //     loaded = true;
+      //   }
+      // };
+      document.onreadystatechange = function () {
+          document.getElementById("loader").style.transition = "all 0.5s";
+          if (document.readyState === "complete") {
+            loaded = true;
+          }
+        };
+    </script>
     <img id="logo" src="logo.png" alt="Logo">
     <p id="slogan">Creating unique and innovative solutions</p>
     <div class="main-content">
