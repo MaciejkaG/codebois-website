@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codebois - Creative Development Team</title>
     <link rel="icon" type="image/x-icon" href="logo-r.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <style>
       @font-face {
   font-family: 'GreycliffCF';
@@ -22,7 +23,6 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  animation: fadein 1s ease-in-out;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
   color: white;
   font-family: 'GreycliffCF', sans-serif;
   text-align: center;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 #logo {
   position: absolute;
@@ -111,12 +111,6 @@ a {
 	box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.2);
 	background-color: rgba(0, 0, 0, 0.2);
 }
-footer {
-  text-align: center;
-  margin-top: auto; /* aligns the footer to the bottom of the viewport */
-  width: 100%; /* spans the full width of the viewport */
-  margin-bottom: 50px;
-}
 
 /* custom scrollbar styles */
 ::-webkit-scrollbar {
@@ -127,6 +121,7 @@ footer {
   border-radius: 10px;
   background: linear-gradient(to top, #d33878, #469ddc);
 }
+
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -140,13 +135,12 @@ footer {
             justify-content: center;
             align-items: center;
             background: black;
-            width: 92vw;
+            width: 100vw;
             height: 100vh;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
-            color: white;
             font-family: monospace;
             position: fixed;
             z-index: 10;
@@ -183,6 +177,8 @@ footer {
       const videoElem = document.querySelector('video');
       var loaded = false;
 
+      videoElem.src = "cb-logo-anim-end.mp4"
+
       videoElem.addEventListener('ended', (event) => {
         if (loaded) {
           if (videoElem.src.includes("cb-logo-anim-end.mp4")) {
@@ -190,9 +186,11 @@ footer {
             setTimeout(() => {
               document.getElementById("loader").style.opacity = 0;
               document.getElementById("loader").style.visibility = "hidden";
-            }, 500);
-          } else {
-            videoElem.src = "cb-logo-anim-end.mp4"
+            }, 550);
+            setTimeout(() => {
+              document.body.style.overflowY = "scroll";
+            }, 600);
+
           }
         } else {
           videoElem.play();
@@ -248,7 +246,7 @@ footer {
         </div>
         </div>
         <footer>
-          <p style="margin-left: -69px;">Copyright ©2023 Codebois</p>
+          <p style="margin-bottom: 30px;">Copyright ©2023 Codebois</p>
       </footer>
     </div>
   </body>
