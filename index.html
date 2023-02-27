@@ -12,8 +12,18 @@
 }
 
 
-html{
+html {
     scroll-behavior: smooth;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }
 
 #slogan {
@@ -138,15 +148,6 @@ a {
     border-radius: 25px;
 }
 
-/* custom scrollbar styles */
-::-webkit-scrollbar {
-  width: 10px;
-  background: transparent
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: linear-gradient(to top, #d33878, #469ddc);
-}
 
 @keyframes bganim {
     0%{ background-position: 0 0; }
