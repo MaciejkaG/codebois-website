@@ -11,6 +11,11 @@
   src: url('font/greycliff/GreycliffCF-Medium.ttf') format('truetype');
 }
 
+
+html{
+    scroll-behavior: smooth;
+}
+
 #slogan {
   position: absolute;
   top: 45%;
@@ -19,33 +24,44 @@
   font-size: 60px;
   font-weight: 800;
   text-align: center;
-  background: linear-gradient(to top, #d33878, #469ddc);
+  background: linear-gradient(35deg, #d33878, #4655dc);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 }
 
 body {
-  background-color: black;
-  color: white;
-  font-family: 'GreycliffCF', sans-serif;
-  text-align: center;
-  overflow-y: hidden;
-}
+    background-color: #000;
+    background-image: linear-gradient(135deg, #020010, #100010, #020010);
+    background-size: 200% 50%;
+    animation: bganim 10s infinite linear;
+    color: #BBBBBB;
+    font-family: 'GreycliffCF', sans-serif;
+    text-align: center;
+    overflow-y: hidden;
+        }
 #logo {
+  opacity: 60%;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 30px;
+  left: 30px;
   width: 150px;
   height: auto;
+  transition: transform .2s;
 }
+
+#logo:hover {
+    opacity: 80%;
+    transform: scale(1.1);
+}
+
 .main-content {
   position: absolute;
   top: 110%;
   left: 50%;
   transform: translate(-50%,0);
   width: 80%;
-  background: black;
+  background: rgba(0, 0, 0, .7);
   border-radius: 10px;
   padding: 40px;
 }
@@ -63,7 +79,7 @@ body {
   margin-bottom: 40px;
 }
 a {
-  color: #61dafb;
+  color: #ad4fc9;
   font-weight: 600;
 }
 .team {
@@ -112,6 +128,16 @@ a {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
+.member p.names {
+    color: #EEEEEE;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.round-corners{
+    border-radius: 25px;
+}
+
 /* custom scrollbar styles */
 ::-webkit-scrollbar {
   width: 10px;
@@ -120,6 +146,11 @@ a {
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: linear-gradient(to top, #d33878, #469ddc);
+}
+
+@keyframes bganim {
+    0%{ background-position: 0 0; }
+    100%{ background-position: 200% 100%; }
 }
 
 @keyframes fadein {
@@ -208,51 +239,53 @@ a {
           }
         };
     </script>
-    <img id="logo" src="logo.png" alt="Logo">
+    <a href="#services">
+        <img id="logo" src="logo.png" alt="Logo" class="round-corners">
+    </a>
     <p id="slogan">Creating unique and innovative solutions</p>
-    <div class="main-content">
+    <div class="main-content round-corners">
         <p id="about">At Codebois, we strive to deliver the highest quality products and services to our clients. Our team of young and creative developers is dedicated to pushing the boundaries of what is possible and creating unique and innovative solutions for your business. <a href="https://www.instagram.com/jerzyzientkowskiofficial/">Contact us</a> to learn more about how we can help you achieve your goals.</p>
         <p id="services">Our services include web development, mobile development, UI/UX design, and more.</p>
         <div class="team">
         <div class="member">
             <img src="employee1.png" alt="Employee 1">
-            <p>Vandef<br>Programmer</p>
+            <p class="names">Vandef<br>Programmer</p>
             <p class="pref-lang">Preferred Languages: C#, C++</p>
             <p class="bio">Vandef is an experienced programmer with a passion for creating beautiful and functional websites.</p>
         </div>
         <div class="member">
             <img src="employee2.gif" alt="Employee 2">
-            <p>Gustaw<br>Programmer</p>
+            <p class="names">Gustaw<br>Programmer</p>
             <p class="pref-lang">Preferred Languages: Python, Java</p>
             <p class="bio">Gustaw is a talented programmer with a knack for finding creative solutions to complex problems.</p>
         </div>
         <div class="member" style="margin-right: 40px;">
             <img src="employee3.png" alt="Employee 3">
-            <p>Pingwinek<br>Programmer</p>
+            <p class="names">Pingwinek<br>Programmer</p>
             <p class="pref-lang">Preferred Languages: PHP, Python, JavaScript</p>
             <p class="bio">Pingwinek is a passionate programmer with a deep understanding of web development technologies.</p>
         </div>
         <div class="member">
             <img src="employee4.png" alt="Employee 4">
-            <p>Maciejka<br>Programmer</p>
+            <p class="names">Maciejka<br>Programmer</p>
             <p class="pref-lang">Preferred Languages: Python, HTML</p>
             <p class="bio">Maciejka is an experienced programmer and web designer with a passion for developing innovative applications and an extraordinary talent in designing UIs and websites.</p>
         </div>
         <div class="member">
           <img src="employee5.png" alt="Employee 5">
-          <p>Niokki<br>Graphical artist</p>
+          <p class="names">Niokki<br>Graphical artist</p>
           <!-- <p class="pref-lang">Preferred Languages: PHP</p> -->
           <p class="bio">Niokki is a surprisingly skilled graphical artist, he makes ridiculously good logos, brand graphics and designs.</p>
         </div>
         <div class="member">
             <img src="employee6.png" alt="Employee 6">
-            <p>Jerzy Zientkowski<br>CEO</p>
+            <p class="names">Jerzy Zientkowski<br>CEO</p>
             <p class="pref-lang">Preferred Languages: PHP</p>
             <p class="bio">Jerzy is the founder and CEO of Codebois. He is an experienced leader with a passion for helping clients succeed.</p>
         </div>
         </div>
         <footer>
-          <p style="margin-bottom: 30px;">Copyright ©2023 Codebois</p>
+          <p style="margin-bottom: 30px; opacity: .4;">Copyright ©2023 Codebois</p>
       </footer>
     </div>
   </body>
