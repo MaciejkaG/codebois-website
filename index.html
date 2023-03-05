@@ -5,203 +5,27 @@
     <title>Codebois - Creative Development Team</title>
     <link rel="icon" type="image/x-icon" href="logo-r.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <style>
-      @font-face {
-  font-family: 'GreycliffCF';
-  src: url('font/greycliff/GreycliffCF-Medium.ttf') format('truetype');
-}
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js"></script>
 
 
-html {
-    scroll-behavior: smooth;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
-
-::-webkit-scrollbar-thumb {
-    background: #FF0000;
-}
-
-#slogan {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 60px;
-  font-weight: 800;
-  text-align: center;
-  background: linear-gradient(35deg, #d33878, #4655dc);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-body {
-    background-color: #000;
-    background-image: linear-gradient(135deg, #020010, #100010, #020010);
-    background-size: 200% 50%;
-    animation: bganim 10s infinite linear;
-    color: #BBBBBB;
-    font-family: 'GreycliffCF', sans-serif;
-    text-align: center;
-    overflow-y: hidden;
-        }
-#logo {
-  opacity: 60%;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 150px;
-  height: auto;
-  transition: transform .2s;
-}
-
-#logo:hover {
-    opacity: 60%;
-    transform: scale(1.1);
-}
-
-.main-content {
-  position: absolute;
-  top: 110%;
-  left: 50%;
-  transform: translate(-50%,0);
-  width: 80%;
-  background: rgba(0, 0, 0, .7);
-  border-radius: 10px;
-  padding: 40px;
-}
-#about {
-  font-size: 18px;
-  line-height: 1.5;
-  padding: 20px;
-  margin-bottom: 40px;
-}
-#services {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.5;
-  padding: 20px;
-  margin-bottom: 40px;
-}
-a {
-  color: #ad4fc9;
-  font-weight: 600;
-}
-.team {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 150px;
-  flex-wrap: wrap;
-}
-.team .member {
-  width: 300px;
-  margin: 20px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 20px;
-  border-radius: 10px;
-  animation: fadeIn 2s ease;
-  transition: all 0.3s ease;
-}
-.member img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-.member p {
-  margin-bottom: 10px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.member .pref-lang {
-  font-size: 12px;
-  font-style: italic;
-  margin-bottom: 10px;
-}
-.member .bio {
-  font-size: 12px;
-  font-style: italic;
-  margin-bottom: 10px;
-}
-.member:hover {
-	transform: scale(1.2); 
-}
-
-.member p.names {
-    color: #EEEEEE;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.round-corners{
-    border-radius: 25px;
-}
-
-
-@keyframes bganim {
-    0%{ background-position: 0 0; }
-    100%{ background-position: 200% 100%; }
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes slidein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-
-.loader-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: black;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            font-family: monospace;
-            position: fixed;
-            z-index: 10;
-        }
-
-        .loader-container video {
-            margin: 0 auto;
-            width: 92vh;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        @media all and (max-width: 600px)
-        {
-            .loader-container video {
-            margin: 0 auto;
-            width: 60vh;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        } 
-        }
-    </style>
   </head>
   <body>
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars">
+          <img  id="logo" src="logo.png" alt="Logo" class="round-corners" >
+        </i>
+
+      </a>
+    </div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="loader-container" id="loader">
-      <video autoplay muted playsinline style="pointer-events: none;" src="cb-logo-anim-spinner.mp4"
+      <video autoplay muted playsinline style="pointer-events: none;" src="cb-logo-anim-spinner.mp4 " type="video/mp4"
         id="loaderVideo"></video>
     </div>
     <script>
@@ -238,21 +62,16 @@ a {
             loaded = true;
           }
         };
+
+    
     </script>
-    <a href="#services">
-        <img id="logo" src="logo.png" alt="Logo" class="round-corners">
-    </a>
+
     <p id="slogan">Creating unique and innovative solutions</p>
     <div class="main-content round-corners">
         <p id="about">At Codebois, we strive to deliver the highest quality products and services to our clients. Our team of young and creative developers is dedicated to pushing the boundaries of what is possible and creating unique and innovative solutions for your business. <a href="https://www.instagram.com/jerzyzientkowskiofficial/">Contact us</a> to learn more about how we can help you achieve your goals.</p>
         <p id="services">Our services include web development, mobile development, UI/UX design, and more.</p>
         <div class="team">
-        <div class="member">
-            <img src="employee1.png" alt="Employee 1">
-            <p class="names">Vandef<br>Programmer</p>
-            <p class="pref-lang">Preferred Languages: C#, C++</p>
-            <p class="bio">Vandef is an experienced programmer with a passion for creating games in unity (i tried telling him to stop but he wouldn't listen).</p>
-        </div>
+        
         <div class="member">
             <img src="employee2.gif" alt="Employee 2">
             <p class="names">Gustaw<br>Programmer</p>
@@ -288,5 +107,6 @@ a {
           <p style="margin-bottom: 30px; opacity: .4;">Copyright ©2023 Codebois</p>
       </footer>
     </div>
+
   </body>
 </html>
