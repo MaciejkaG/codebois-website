@@ -3,6 +3,10 @@ font-family: 'GreycliffCF';
 src: url('font/greycliff/GreycliffCF-Medium.ttf') format('truetype');
 }
 
+* {
+  box-sizing: border-box;
+}
+
 
 html {
 scroll-behavior: smooth;
@@ -14,9 +18,6 @@ width: 0;  /* Remove scrollbar space */
 background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
-::-webkit-scrollbar-thumb {
-background: #FF0000;
-}
 
  /* Add a black background color to the top navigation */
  .topnav {
@@ -38,6 +39,8 @@ background: #FF0000;
     text-decoration: none;
     font-size: 17px;
     padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .topnav a:hover {
@@ -106,7 +109,7 @@ background: #FF0000;
 
 #slogan {
 position: absolute;
-top: 30%;
+top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 font-size: 60px;
@@ -278,3 +281,5 @@ to   { opacity: 1; }
       transform: translate(-50%, -50%);
   } 
   }
+
+
