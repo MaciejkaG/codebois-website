@@ -1,130 +1,115 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codebois - Creative Development Team</title>
-    <link rel="icon" type="image/x-icon" href="logo-r.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="scripts.js"></script>
-
-
-  </head>
-  <body>
-    <div class="topnav" id="myTopnav">
-      <a href="#home" class="active">Home</a>
-      <a href="#Projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars">
-          <img  id="logo" src="logo.png" alt="Logo" class="round-corners" >
-        </i>
-
-      </a>
+    <link rel="icon" href="./assets/img/logo-r.png">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsiveness.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Maven+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scrollArrow">
+        <img src="./assets/img/arrow.svg" alt="scrollArrow">
     </div>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div class="loader-container" id="loader">
-      <video autoplay muted playsinline style="pointer-events: none;" src="cb-logo-anim-spinner.mp4 " type="video/mp4"
-        id="loaderVideo"></video>
+    <img src="./assets/img/logo.png" alt="logo" class="logo">
+    <div class="sloganContainer">
+        <h1 class="slogan">Creating unique and innovative solutions</h1>
+    </div>
+    <div class="main">
+        <p class="textCenter">At Codebois, we strive to deliver the highest quality products and services to our clients. Our team of creative developers is dedicated to pushing the boundaries of what is possible and creating unique and innovative solutions for your business. Contact us to learn more about how we can help you achieve your goals.</p>
+        <h1 class="sectionHeader">Our team</h1>
+        <div class="team">
+            <div class="position">
+                <img src="./assets/img/employee3.png" alt="">
+                <div>
+                    <h1>Pingwinek</h1>
+                    <p class="title">Programmer</p>
+                </div>
+                <p>smierdzi nie myje sie i dobrze programuje</p>
+            </div>
+            <div class="position">
+                <img src="./assets/img/employee4.png" alt="">
+                <div>
+                    <h1>Maciejka</h1>
+                    <p class="title">Programmer/designer</p>
+                </div>
+                <p>gra w lige (czyt. "nie myje sie, nie dotyka trawy i nie zna pojecia 'kobieta'")</p>
+            </div>
+            <div class="position">
+                <img src="./assets/img/employee2.gif" alt="">
+                <div>
+                    <h1>Blekwek</h1>
+                    <p class="title">We don't know yet</p>
+                </div>
+                <p>nie umie splitowac tekstu w pythonie</p>
+            </div>
+        </div>
+        <h1 class="sectionHeader">Our projects</h1>
+        <div class="projects">
+            <div class="position">
+                <img src="./assets/img/project1.png" alt="">
+                <div>
+                    <h1>statboi</h1>
+                    <p class="title">Discord bot</p>
+                </div>
+                <p>statboi is an impressively intuitive and well-built Discord bot that embraces the power of JavaScript and Python to provide you the best Discord stats insight experience ever.</p>
+            </div>
+            <div class="position">
+                <img src="./assets/img/employee4.png" alt="">
+                <div>
+                    <h1>Maciejka</h1>
+                    <p class="title">Programmer/designer</p>
+                </div>
+                <p>a</p>
+            </div>
+            <div class="position">
+                <img src="./assets/img/employee2.gif" alt="">
+                <div>
+                    <h1>Blekwek</h1>
+                    <p class="title">Programmer</p>
+                </div>
+                <p>nie umie splitowac tekstu w pythonie</p>
+            </div>
+        </div>
     </div>
     <script>
-      const videoElem = document.querySelector('video');
-      var loaded = false;
-
-      videoElem.src = "cb-logo-anim-end.mp4"
-
-      videoElem.addEventListener('ended', (event) => {
-        if (loaded) {
-          if (videoElem.src.includes("cb-logo-anim-end.mp4")) {
-            document.getElementById("loader").style.transition = "all 0.5s";
-            setTimeout(() => {
-              document.getElementById("loader").style.opacity = 0;
-              document.getElementById("loader").style.visibility = "hidden";
-            }, 550);
-            setTimeout(() => {
-              document.body.style.overflowY = "scroll";
-            }, 600);
-
-          }
-        } else {
-          videoElem.play();
-        }
-      });
-      // document.onreadystatechange = function () {
-      //   if (document.readyState === "complete") {
-      //     loaded = true;
-      //   }
-      // };
-      document.onreadystatechange = function () {
-          document.getElementById("loader").style.transition = "all 0.5s";
-          if (document.readyState === "complete") {
-            loaded = true;
-          }
-        };
-
-    
+        $(document).ready(function () {
+                $(document).scroll(function () {
+                    if ($(this).scrollTop() > 199) {
+                        $('.scrollArrow').css('visibility', 'visible')
+                        $('.scrollArrow').css('opacity', '1')
+                    } else {
+                        $('.scrollArrow').css('visibility', 'hidden')
+                        $('.scrollArrow').css('opacity', '0')
+                    }
+                });
+            });
+        $('.scrollArrow').each(function () {
+                $(this).click(function () {
+                    $('html,body').animate({ scrollTop: 0 }, 'slow');
+                    return false;
+                });
+            });
+        $(function () {
+            $('.team .position').hover(function () {
+                    $('.team .position').css('opacity', '0.5');
+            }, function () {
+                $('.team .position').css('opacity', '1');
+            });
+        });
+        $(function () {
+            $('.projects .position').hover(function () {
+                $('.projects .position').css('opacity', '0.5');
+            }, function () {
+                $('.projects .position').css('opacity', '1');
+            });
+        });
     </script>
-    <div class="container-slogan">
-      <p id="slogan">Creating unique and innovative solutions</p>
-      <img src="logo.png" style="display: block; margin-left: auto; margin-right: auto; width: 30%;">
-
-    </div>
-    <div class="container-members">
-      <div class="presentation-area">
-
-        <div class="main-content round-corners">
-            <p id="about">At Codebois, we strive to deliver the highest quality products and services to our clients. Our team of young and creative developers is dedicated to pushing the boundaries of what is possible and creating unique and innovative solutions for your business. <a href="https://www.instagram.com/jerzyzientkowskiofficial/">Contact us</a> to learn more about how we can help you achieve your goals.</p>
-            <p id="services">Our services include web development, mobile development, UI/UX design, and more.</p>
-            <div class="team">
-        
-            <div class="member">
-              <img src="employee2.gif" alt="Employee 2">
-              <p class="names">Gustaw<br>Programmer</p>
-              <p class="pref-lang">Preferred Languages: Python, Java</p>
-              <p class="bio">Gustaw is a talented programmer with a knack for finding creative solutions to complex problems. He is not able to split a string in python though.</p>
-            </div>
-            <div class="member" style="margin-right: 40px;">
-              <img src="employee3.png" alt="Employee 3">
-              <p class="names">Pingwinek<br>Programmer</p>
-              <p class="pref-lang">Preferred Languages: PHP, Python, JavaScript</p>
-              <p class="bio">Pingwinek is a passionate programmer with a deep understanding of web development technologies. He is also wanted in forty different countries for fraud, money laundering and more.</p>
-            </div>
-            <div class="member">
-              <img src="employee4.png" alt="Employee 4">
-              <p class="names">Maciejka<br>Programmer</p>
-              <p class="pref-lang">Preferred Languages: Python, HTML</p>
-              <p class="bio">Maciejka is an experienced programmer and a web designer with a passion for developing innovative applications. He also likes cheese.</p>
-            </div>
-            <div class="member">
-              <img src="employee5.png" alt="Employee 5">
-              <p class="names">Niokki<br>Designer</p>
-              <!-- <p class="pref-lang">Preferred Languages: PHP</p> -->
-              <p class="bio">Niokki is a skilled designer, he has years of experience and can create anything from logos to buttons, no problem. His stuff is like a work of art, i'd hang it up it my own room if the servers didn't take up so much space!</p>
-            </div>
-            <div class="member">
-              <img src="employee6.png" alt="Employee 6">
-              <p class="names">Jerzy Zientkowski<br>CEO</p>
-              <p class="pref-lang">Preferred Languages: PHP</p>
-              <p class="bio">Jerzy is the founder and CEO of Codebois. He is an experienced leader with a passion for helping clients succeed. An OG in the coding community as well as a professional speaker.</p>
-            </div>
-            </div>
-            <footer>
-          <p style="margin-bottom: 30px; opacity: .4;">Copyright ©2023 Codebois</p>
-      </footer>
-      </div>
-    </div>
-
-
-    <div class="Projects">
-      
-       
- 
-
-
-    </div>
-
-
-
-  </body>
+</body>
 </html>
