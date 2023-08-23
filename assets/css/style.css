@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Space+Mono&display=swap');
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: black;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+    color: white;
+    font-size: 40px;
+    font-family: 'Space Mono', monospace;
+    margin: 15px; /* debug */
+}
+
+.title span {
+    background: white;
+    color: black;
+}
